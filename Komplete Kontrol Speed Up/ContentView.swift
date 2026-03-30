@@ -17,19 +17,38 @@ enum SupportedApplications: String, CaseIterable
     case Maschine3 = "Maschine 3"
 }
 
+
 struct ContentView: View
 {
+    @State private var atLeastOneInstalled: Bool = {
+        
+        for app in SupportedApplications.allCases {
+            if isApplicationInstalled(type: app) {
+                return true
+            }
+        }
+        
+        return false
+    }()
     var body: some View
     {
         HSplitView
         {
-            ForEach(SupportedApplications.allCases, id:\.self)
+            
+            if atLeastOneInstalled
             {
-                let isInstalled: Bool = isApplicationInstalled(type: $0)
-                
-                if isInstalled {
-                    ItemView(content: $0.rawValue, type: $0, isEnabled: isInstalled, toggle: isScanAppEnabled(type: $0))
+                ForEach(SupportedApplications.allCases, id:\.self)
+                {
+                    let isInstalled: Bool = isApplicationInstalled(type: $0)
+                    
+                    if isInstalled {
+                        ItemView(content: $0.rawValue, type: $0, isEnabled: isInstalled, toggle: isScanAppEnabled(type: $0))
+                    }
                 }
+            }
+            else
+            {
+                NotInstalledView()
             }
         }
     }
@@ -43,6 +62,29 @@ struct NotEnabledView: View
         {
             RoundedRectangle(cornerRadius: 20).frame(width: 100, height: 100)
             Text("Disabled").colorInvert()
+        }
+    }
+}
+
+struct NotInstalledView: View
+{
+    var body: some View
+    {
+        ZStack
+        {
+            VStack
+            {
+                Spacer()
+                VStack
+                {
+                    ZStack
+                    {
+                        RoundedRectangle(cornerRadius: 20).frame(width: 400, height: 150).blur(radius: 2)
+                        Text("Could not find any Maschine or Komplete Kontrol Versions").colorInvert()
+                    }
+                }
+                Spacer()
+            }
         }
     }
 }
@@ -94,12 +136,12 @@ struct ItemView: View
                     Spacer()
                 }
                 Spacer()
-            }//.blur(radius: (isEnabled) ? 0 : 2)
+            }.blur(radius: (isEnabled) ? 0 : 2)
             
-//            if !isEnabled
-//            {
-//                NotEnabledView()
-//            }
+            if !isEnabled
+            {
+                NotEnabledView()
+            }
         }
     }
     

@@ -61,7 +61,6 @@ func getScanAppFileName(type: SupportedApplications) -> String
 
 func getChangedScanAppFileName(name: String) -> String
 {
-//    print(name)
     switch name {
         
         case SCAN_APP3_NAME:
@@ -76,19 +75,6 @@ func getChangedScanAppFileName(name: String) -> String
         default:
             return name
     }
-    
-//    if name == SCAN_APP3_NAME
-//    {
-//        return CHANGED_SCAN_APP3_NAME
-//    }
-//    else if name == SCAN_APP_NAME
-//    {
-//        return CHANGED_SCAN_APP_NAME
-//    }
-//    else
-//    {
-//        return CHANGED_NI_PLUGIN_INFO_NAME
-//    }
 }
 
 
@@ -114,7 +100,7 @@ func isScanAppEnabled(type: SupportedApplications) -> Bool
     if (scanAppState && changedScanAppState)
     {
         // New Version was recently installed so we'll remove the old scan app and return false
-//        try! FileManager.default.removeItem(at: URL(fileURLWithPath: String(scanAppDirectory + changedScanAppName)))
+        try! FileManager.default.removeItem(at: URL(fileURLWithPath: String(scanAppDirectory + changedScanAppName)))
         return true
     }
     
@@ -158,9 +144,6 @@ func isApplicationInstalled(type: SupportedApplications) -> Bool
     let changedScanAppFileName: String = getChangedScanAppFileName(name: scanAppFileName)
     var result: Bool = true
     
-//    print(scanAppDirectory + scanAppFileName)
-//    print(scanAppDirectory + changedScanAppFileName)
-    
     // Old Versions of Komplete Kontrol and Maschine use the regular ScanApp
     // while newer versions use ScanApp3, so we'll check for which one we have
     
@@ -172,12 +155,10 @@ func isApplicationInstalled(type: SupportedApplications) -> Bool
     else if FileManager.default.fileExists(atPath: String(scanAppDirectory + changedScanAppFileName))
     {
         result = true
-//        setScanAppName(type: type, name: changedScanAppFileName)
     }
     else
     {
         // Couldn't find it
-//        print("Couldn't find " + scanAppDirectory + scanAppFileName)
         result = false
     }
     
