@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/AppIcon.icns</key>
 		<data>
-		zWv0EovlH2HSq3JxNjTgXOy6jTc=
+		m9qFsEMg2mCOU/w0vYgcZymAJd4=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		b0oJwVmPGpxgzZZyrEdonIdAvHQ=
+		LAp3FLoiWPnlYONDaAl3d4Ejr28=
 		</data>
 		<key>Resources/README.md</key>
 		<data>
@@ -32,7 +32,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			KE4N9v4/bAHRtErd+joM5G0lLAU=
+			nIjl8HfquZ9rG/xqiPkBCn5xhUw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Komplete Kontrol Speed Up.debug" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: noahpena7@gmail.com (4MDBB7F6AU)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -41,7 +41,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			8xzhq+fXNjUl5oL6lD0Q2VY0Npk=
+			O3vSasXKPyfkr2ZQg2yaAlkqJqU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "__preview" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: noahpena7@gmail.com (4MDBB7F6AU)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -50,14 +50,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NZV8lzeDctA5IT0tSADekMZidpDF+0ysjz3+t9kQmi0=
+			54vLaCxJaresEchhUPQafJJxP1ilLZFHZbYkr3hNpFc=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X+O37YNr+Z4HWFvOohI5EK0qhMjW8pczV9fwHXHCKiI=
+			SzLM1Kxuw9lyRmfZCNSqK3yT3vkKexRI2XPxNkpC8Wk=
 			</data>
 		</dict>
 		<key>Resources/README.md</key>

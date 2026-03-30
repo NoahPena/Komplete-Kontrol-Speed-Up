@@ -50,6 +50,9 @@ noahpenamusic@gmail.com
 
 ## Version History
 
+* 1.2
+    * Fixed Maschine 3 not being recognized
+    * Added ability to use different versions of KK and Maschine together
 * 1.1
     * Added Support for Komplete Kontrol 2 and Maschine 3
 * 1.0
