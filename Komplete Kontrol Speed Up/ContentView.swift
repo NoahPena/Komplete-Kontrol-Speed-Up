@@ -11,8 +11,10 @@ import SwiftUI
 
 enum SupportedApplications: String, CaseIterable
 {
-    case KompleteKontrol = "KompleteKontrol"
-    case Maschine = "Maschine"
+    case KompleteKontrol2 = "KompleteKontrol 2"
+    case Maschine2 = "Maschine 2"
+    case KompleteKontrol3 = "KompleteKontrol 3"
+    case Maschine3 = "Maschine 3"
 }
 
 struct ContentView: View
@@ -23,7 +25,11 @@ struct ContentView: View
         {
             ForEach(SupportedApplications.allCases, id:\.self)
             {
-                ItemView(content: $0.rawValue, type: $0, isEnabled: isApplicationInstalled(type: $0), toggle: isScanAppEnabled(type: $0))
+                let isInstalled: Bool = isApplicationInstalled(type: $0)
+                
+                if isInstalled {
+                    ItemView(content: $0.rawValue, type: $0, isEnabled: isInstalled, toggle: isScanAppEnabled(type: $0))
+                }
             }
         }
     }
@@ -88,12 +94,12 @@ struct ItemView: View
                     Spacer()
                 }
                 Spacer()
-            }.blur(radius: (isEnabled) ? 0 : 2)
+            }//.blur(radius: (isEnabled) ? 0 : 2)
             
-            if !isEnabled
-            {
-                NotEnabledView()
-            }
+//            if !isEnabled
+//            {
+//                NotEnabledView()
+//            }
         }
     }
     
